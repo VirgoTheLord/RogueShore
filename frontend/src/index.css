@@ -13,7 +13,7 @@
   font-optical-sizing: auto;
   font-style: normal;
   overflow-x: hidden;
-  /* color: #bb8021 */
+  background-color: #FAF0E6 ;
 }
 .scroll-hidden::-webkit-scrollbar {
   display: none;
@@ -23,3 +23,32 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }
+/* global.css or App.css */
+
+.underline-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle; /* Aligns better with surrounding text */
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* or tweak to bottom: -1px if it's overlapping */
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.underline-hover:hover::after {
+  transform: scaleX(1);
+}
+
+
+

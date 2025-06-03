@@ -93,7 +93,7 @@ const ProductDetails = () => {
     }
   }, [SelectedProduct]);
   return (
-    <div className="md:p-4 ">
+    <div className="md:p-4 bg-white">
       <div className="max-w-6xl  mx-auto bg-white p-8 rounded-lg">
         <div className="flex flex-col md:flex-row">
           {/* Left Thumbnails */}
@@ -211,7 +211,7 @@ const ProductDetails = () => {
               className={`bg-main text-white py-2 px-6 rounded w-full mb-4 ${
                 isButtonDisabled
                   ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-third hover:text-black"
+                  : "hover:bg-third "
               }`}
             >
               {isButtonDisabled ? "Adding to cart..." : "Add to Cart"}

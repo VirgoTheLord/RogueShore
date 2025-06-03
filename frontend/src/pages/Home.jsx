@@ -79,7 +79,7 @@ const Home = () => {
       <GenderCollectionSection />
       <NewArrivals />
       {/* Best Sellers */}
-      <h2 className="text-5xl text-center font-bold mb-4 mt-10">
+      <h2 className="text-5xl text-center font-bold pb-4 pt-15  bg-white">
         Best Sellers.
       </h2>
       <ProductDetails />

@@ -19,7 +19,7 @@ const Hero = () => {
           </p>
           <Link
             to="#"
-            className="absolute bottom-5 right-5 text-white text-xs lg:text-2xl font-semibold cursor-pointer hover:underline"
+            className="absolute bottom-5 right-5 text-white text-xs lg:text-2xl font-semibold cursor-pointer hover:underline hover:underline-offset-4 transition-all duration-300"
           >
             Shop Now.
           </Link>
