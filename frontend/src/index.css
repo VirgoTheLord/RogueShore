@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-main:#A67C68;
+  --color-secondary:#FAF0E6;
+  --color-third:#E5C9B2;
+  --font-main: "Syne", sans-serif;
+}
+
+#root{
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow-x: hidden;
+  /* color: #bb8021 */
+}
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
