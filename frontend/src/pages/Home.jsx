@@ -74,7 +74,7 @@ const placeholderProducts = [
 ];
 const Home = () => {
   return (
-    <div>
+    <div className="bg-secondary">
       <Hero />
       <GenderCollectionSection />
       <NewArrivals />
