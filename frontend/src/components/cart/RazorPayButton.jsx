@@ -21,7 +21,7 @@ const RazorPayButton = ({ amount, onSuccess, onError, shippingAddress }) => {
 
     // Razorpay checkout options
     const options = {
-      key: "rzp_test_6WERBjWFZCPdNL", // Replace with your Razorpay Test Key ID
+      key: import.meta.env.VITE_KEY_ID, // Replace with your Razorpay Test Key ID
       amount: amountInPaise, // Amount in paise (e.g., 10000 for ₹100)
       currency: "INR",
       name: "RogueShore",
