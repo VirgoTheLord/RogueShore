@@ -27,7 +27,7 @@ const Navbar = () => {
           {navLinks.map((label) => (
             <Link
               key={label}
-              to="#"
+              to="collections/all"
               className="text-sm font-medium uppercase text-gray-700 hover:text-black"
             >
               {label}
