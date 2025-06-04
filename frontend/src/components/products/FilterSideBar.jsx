@@ -110,9 +110,11 @@ const FilterSideBar = () => {
 
   return (
     <div className="p-4">
-      <h3 className="text-xl font-medium text-gray-800 mb-4">Filter</h3>
+      <h3 className="text-2xl font-semibold text-main mb-4 underline-hover">
+        Filter.
+      </h3>
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Category</label>
+        <label className="block text-gray-800 font-medium mb-2">Category</label>
         {categories.map((category) => (
           <div key={category} className="flex items-center mb-1">
             <input
@@ -121,15 +123,15 @@ const FilterSideBar = () => {
               value={category}
               onChange={handleFilterChange}
               checked={filter.category === category}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-third accent-main focus:ring-third border-main"
             />
-            <span className="text-gray-700">{category}</span>
+            <span className="text-gray-500">{category}</span>
           </div>
         ))}
       </div>
 
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Gender</label>
+        <label className="block text-gray-800 font-medium mb-2">Gender</label>
         {genders.map((gender) => (
           <div key={gender} className="flex items-center mb-1">
             <input
@@ -138,14 +140,14 @@ const FilterSideBar = () => {
               value={gender}
               onChange={handleFilterChange}
               checked={filter.gender === gender}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 accent-main focus:ring-blue-400 border-gray-300"
             />
-            <span className="text-gray-700">{gender}</span>
+            <span className="text-gray-500">{gender}</span>
           </div>
         ))}
       </div>
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Color</label>
+        <label className="block text-gray-800 font-medium mb-2">Color</label>
         <div className="flex flex-wrap gap-2">
           {colors.map((color) => (
             <button
@@ -155,7 +157,7 @@ const FilterSideBar = () => {
               value={color}
               onClick={handleFilterChange}
               className={`w-8 h-8 rounded-full border border-gray-300 cursor pointer transition hover:scale-105 ${
-                filter.color === color ? "ring-2 ring-blue-500" : ""
+                filter.color === color ? "ring-2 ring-main" : ""
               }`}
               style={{ backgroundColor: color.toLowerCase() }}
             ></button>
@@ -164,7 +166,7 @@ const FilterSideBar = () => {
       </div>
 
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Size</label>
+        <label className="block text-gray-800 font-medium mb-2">Size</label>
         {sizes.map((size) => (
           <div key={size} className="flex items-center mb-1">
             <input
@@ -173,15 +175,15 @@ const FilterSideBar = () => {
               value={size}
               onChange={handleFilterChange}
               checked={filter.size.includes(size)}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 accent-main focus:ring-blue-400 border-gray-300"
             />
-            <span className="text-gray-700">{size}</span>
+            <span className="text-gray-500">{size}</span>
           </div>
         ))}
       </div>
 
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Material</label>
+        <label className="block text-gray-800 font-medium mb-2">Material</label>
         {materials.map((material) => (
           <div key={material} className="flex items-center mb-1">
             <input
@@ -190,15 +192,15 @@ const FilterSideBar = () => {
               value={material}
               onChange={handleFilterChange}
               checked={filter.material.includes(material)}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-third accent-main focus:ring-third border-gray-300"
             />
-            <span className="text-gray-700">{material}</span>
+            <span className="text-gray-500">{material}</span>
           </div>
         ))}
       </div>
 
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Brand</label>
+        <label className="block text-gray-800 font-medium mb-2">Brand</label>
         {brands.map((brand) => (
           <div key={brand} className="flex items-center mb-1">
             <input
@@ -207,15 +209,15 @@ const FilterSideBar = () => {
               value={brand}
               onChange={handleFilterChange}
               checked={filter.brand.includes(brand)}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 accent-main focus:ring-blue-400 border-gray-300"
             />
-            <span className="text-gray-700">{brand}</span>
+            <span className="text-gray-500">{brand}</span>
           </div>
         ))}
       </div>
 
       <div className="mb-8">
-        <label className="block text-gray-600 font-medium mb-2 ">
+        <label className="block text-gray-800 font-medium mb-2 ">
           Price Range
         </label>
         <input
@@ -225,9 +227,9 @@ const FilterSideBar = () => {
           max={100}
           value={priceRange[1]}
           onChange={handlePriceChange}
-          className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
+          className="w-full h-2 bg-third accent-main rounded-lg appearance-none cursor-pointer"
         />
-        <div className="flex justify-between text-gray-600 mt-2 ">
+        <div className="flex justify-between text-gray-800 mt-2 ">
           <span className="">$0</span>
           <span className="">${priceRange[1]}</span>
         </div>

@@ -1,0 +1,8 @@
+key_id = rzp_test_6WERBjWFZCPdNL
+key_secret = UAMEXV9bxWNGuOayCYWi2Mh
+Card Number: 4111 1111 1111 1111
+Expiry: Any future date (MM/YY)
+CVV: Any 3-digit number
+OTP: 123456 (for simulated success)
+Test UPI with a valid UPI ID like success@razorpay.
+
