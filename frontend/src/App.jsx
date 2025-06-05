@@ -11,6 +11,9 @@ import Checkout from "./components/cart/Checkout";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import MyOrdersPage from "./pages/MyOrdersPage";
+import AdminLayout from "./components/admin/AdminLayout";
+import AdminHomePage from "./pages/AdminHomePage";
+import UserManagement from "./components/admin/UserManagement";
 
 const App = () => {
   return (
@@ -18,6 +21,7 @@ const App = () => {
       <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<UserLayout />}>
+          {/* User Layout */}
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
@@ -31,10 +35,13 @@ const App = () => {
           />
           <Route path="order/:id" element={<OrderDetailsPage />} />
           <Route path="/my-orders" element={<MyOrdersPage />} />
-          {/* User Layout */}
         </Route>
 
-        <Route>{/* Admin Layout */}</Route>
+        <Route path="/admin" element={<AdminLayout />}>
+          {/* Admin Layout */}
+          <Route index element={<AdminHomePage />} />
+          <Route path="users" element={<UserManagement />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

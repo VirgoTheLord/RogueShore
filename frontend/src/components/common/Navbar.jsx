@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="container mx-auto flex items-center justify-between py-4 px-6 bg-secondary">
-        <Link to="/" className="text-2xl font-medium">
+        <Link to="/" className="md:text-2xl text-xl font-medium">
           RogueShore.
         </Link>
 
@@ -37,16 +37,22 @@ const Navbar = () => {
 
         {/* Icons + Search */}
         <div className="flex items-center space-x-4">
+          <Link
+            to="/admin"
+            className="hidden md:block bg-main px-2 py-1 rounded text-sm  text-white"
+          >
+            Admin
+          </Link>
           <Link to="/profile" className="hover:text-black">
-            <HiOutlineUser className="w-6 h-6 text-gray-700" />
+            <HiOutlineUser className="md:w-6 md:h-6 w-5 h-5 text-gray-700" />
           </Link>
 
           <button
             onClick={toggleCartDrawer}
             className="relative hover:text-black"
           >
-            <HiOutlineShoppingBag className="w-6 h-6 text-gray-700" />
-            <span className="absolute -top-1.5 left-3 bg-main text-white text-xs font-semibold rounded-full px-1.5 py-0.5">
+            <HiOutlineShoppingBag className="md:w-6 md:h-6 w-5 h-5 text-gray-700" />
+            <span className="absolute md:-top-1.5 md:left-3 -top-2 bg-main text-white text-xs font-semibold rounded-full px-1.5 py-0.5">
               4
             </span>
           </button>
@@ -55,7 +61,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={toggleNavDrawer}>
-            <HiBars3 className="w-6 h-6 text-gray-700" />
+            <HiBars3 className="w-5 h-5 text-gray-700" />
           </button>
         </div>
       </nav>
@@ -81,7 +87,7 @@ const Navbar = () => {
             {navLinks.map((label) => (
               <Link
                 key={label}
-                to="#"
+                to="/collections/all"
                 onClick={toggleNavDrawer}
                 className="block text-gray-600 hover:text-black"
               >

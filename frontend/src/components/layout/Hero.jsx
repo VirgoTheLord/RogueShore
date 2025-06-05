@@ -7,7 +7,7 @@ const Hero = () => {
       <img
         src={heroImg}
         alt="rogueshark"
-        className="w-full h-[737px] md:h-[600px] lg:h-[750px] object-cover"
+        className="w-full h-[739px] md:h-[600px] lg:h-[750px] object-cover"
       />
       <div className="absolute inset-0 bg-black/40 bg-opacity flex items-center justify-center">
         <div className="text-center text-white p-6">
@@ -18,7 +18,7 @@ const Hero = () => {
             Explore Our Collections, Hand Crafted to Elevate Your Style.
           </p>
           <Link
-            to="#"
+            to="/collections/all"
             className="absolute bottom-5 right-5 text-white text-xs lg:text-2xl font-semibold cursor-pointer hover:underline hover:underline-offset-4 transition-all duration-300"
           >
             Shop Now.
