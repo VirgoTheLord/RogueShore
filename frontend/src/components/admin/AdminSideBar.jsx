@@ -55,7 +55,7 @@ const AdminSideBar = () => {
           <span>Products</span>
         </NavLink>
         <NavLink
-          to="/admin/orders"
+          to="/admin/order"
           className={({ isActive }) =>
             `flex items-center space-x-3 py-3 px-4 rounded transition-colors duration-200 ${
               isActive
