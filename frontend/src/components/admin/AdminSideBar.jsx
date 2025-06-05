@@ -15,15 +15,15 @@ const AdminSideBar = () => {
   };
 
   return (
-    <div className="h-full w-full md:w-64 bg-gray-800 text-gray-100 flex flex-col p-6">
+    <div className="h-full w-full md:w-65 bg-gray-800 text-gray-100 flex flex-col p-6">
       {/* Logo/Title */}
       <div className="mb-6">
-        <Link to="/admin" className="text-2xl font-semibold md:text-2xl">
+        <Link to="/admin" className="text-2xl font-semibold md:text-xl">
           RogueShore.
         </Link>
       </div>
-      <h2 className="text-lg font-medium mb-6 text-center md:text-xl">
-        Admin Dashboard
+      <h2 className="text-lg font-medium mb-6 text-center md:text-lg mr-12 md:mr-8">
+        Admin Dashboard.
       </h2>
 
       {/* Navigation */}

@@ -26,7 +26,7 @@ const AdminLayout = () => {
         <div
           className={`w-64 md:w-64 bg-gray-900 text-white fixed top-0 left-0 h-screen z-30 transition-transform duration-300 ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } md:translate-x-0 md:static md:block`}
+          } md:translate-x-0 md:fixed md:block`}
         >
           <AdminSideBar />
         </div>
@@ -40,7 +40,7 @@ const AdminLayout = () => {
         )}
 
         {/* Main Content */}
-        <div className="flex-grow p-6 mt-16 md:mt-0 overflow-auto">
+        <div className="flex-grow p-6 mt-16 md:mt-0 md:ml-64 overflow-auto">
           <Outlet />
         </div>
       </div>
