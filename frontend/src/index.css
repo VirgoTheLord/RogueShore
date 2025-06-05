@@ -35,7 +35,7 @@
 .underline-hover::after {
   content: '';
   position: absolute;
-  bottom: 0; /* or tweak to bottom: -1px if it's overlapping */
+  bottom: -5px; /* or tweak to bottom: -1px if it's overlapping */
   left: 0;
   width: 100%;
   height: 1.5px;
@@ -49,6 +49,57 @@
 .underline-hover:hover::after {
   transform: scaleX(1);
 }
-
-
-
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+@keyframes pulse-slow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(33, 212, 253, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 10px 5px rgba(33, 212, 253, 0.2);
+  }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 2s infinite ease-in-out;
+}
+@keyframes color-pulse {
+  0%, 100% {
+    background: linear-gradient(to right, #08153e, #1aa6c8);
+  }
+  50% {
+    background: linear-gradient(to right, #060f2d, #1688a0); /* CHANGED: Slightly darker gradient for hover pulse */
+  }
+}
+.animate-color-pulse {
+  animation: none;
+}
+button:hover .animate-color-pulse {
+  animation: color-pulse 0.5s ease-in-out;
+}
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+.animate-ripple {
+  animation: none;
+}
+button:active .animate-ripple {
+  animation: ripple 0.4s ease-out;
+}

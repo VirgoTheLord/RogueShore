@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaCreditCard } from "react-icons/fa"; // CHANGED: Imported react-icons/fa for credit card icon
 
 const RazorPayButton = ({ amount, onSuccess, onError, shippingAddress }) => {
   const navigate = useNavigate();
@@ -65,9 +66,15 @@ const RazorPayButton = ({ amount, onSuccess, onError, shippingAddress }) => {
   return (
     <button
       onClick={handlePayment}
-      className="w-full bg-black text-white py-3 rounded"
+      className="relative w-full inline-flex items-center justify-center text-md font-medium text-white bg-gradient-to-r from-[#08153e] to-[#1aa6c8] px-6 py-3 rounded-lg overflow-hidden hover:animate-color-pulse active:scale-95 group" // CHANGED: Added PayPal-inspired hover:shadow-lg, hover:animate-color-pulse, active:scale-95, group
     >
-      Pay with Razorpay
+      <span className="relative z-10 flex items-center">
+        Pay with Razorpay
+        <FaCreditCard className="ml-2 w-5 h-5 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1" />{" "}
+        {/* CHANGED: Used FaCreditCard with hover animation */}
+      </span>
+      <span className="absolute inset-0 bg-blue-50 rounded-lg animate-ripple opacity-30 z-0"></span>{" "}
+      {/* CHANGED: Unchanged, kept ripple effect */}
     </button>
   );
 };
