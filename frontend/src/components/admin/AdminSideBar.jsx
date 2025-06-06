@@ -15,7 +15,7 @@ const AdminSideBar = () => {
   };
 
   return (
-    <div className="h-full w-full md:w-65 bg-gray-800 text-gray-100 flex flex-col p-6">
+    <div className="h-full w-full md:w-65 bg-main text-gray-100 flex flex-col p-6">
       {/* Logo/Title */}
       <div className="mb-6">
         <Link to="/admin" className="text-2xl font-semibold md:text-xl">
@@ -33,8 +33,8 @@ const AdminSideBar = () => {
           className={({ isActive }) =>
             `flex items-center space-x-3 py-3 px-4 rounded transition-colors duration-200 ${
               isActive
-                ? "bg-gray-700 text-white"
-                : "text-gray-300 hover:bg-gray-600 hover:text-white"
+                ? "bg-third text-main"
+                : "text-white hover:bg-third hover:text-main"
             }`
           }
         >
@@ -46,8 +46,8 @@ const AdminSideBar = () => {
           className={({ isActive }) =>
             `flex items-center space-x-3 py-3 px-4 rounded transition-colors duration-200 ${
               isActive
-                ? "bg-gray-700 text-white"
-                : "text-gray-300 hover:bg-gray-600 hover:text-white"
+                ? "bg-third text-main"
+                : "text-white hover:bg-third hover:text-main"
             }`
           }
         >
@@ -59,8 +59,8 @@ const AdminSideBar = () => {
           className={({ isActive }) =>
             `flex items-center space-x-3 py-3 px-4 rounded transition-colors duration-200 ${
               isActive
-                ? "bg-gray-700 text-white"
-                : "text-gray-300 hover:bg-gray-600 hover:text-white"
+                ? "bg-third text-main"
+                : "text-white hover:bg-third hover:text-main"
             }`
           }
         >
@@ -72,8 +72,8 @@ const AdminSideBar = () => {
           className={({ isActive }) =>
             `flex items-center space-x-3 py-3 px-4 rounded transition-colors duration-200 ${
               isActive
-                ? "bg-gray-700 text-white"
-                : "text-gray-300 hover:bg-gray-600 hover:text-white"
+                ? "bg-third text-main"
+                : "text-white hover:bg-third hover:text-main"
             }`
           }
         >

@@ -18,19 +18,19 @@ const AdminHomePage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="p-4 shadow-md rounded-lg">
           <h2 className="text-xl font-semibold">Revenue</h2>
-          <p className="text-2xl ">$10000</p>
+          <p className="text-2xl text-green-700">$ 10000</p>
         </div>
         <div className="p-4 shadow-md rounded-lg">
           <h2 className="text-xl font-semibold">Total Orders</h2>
           <p className="text-2xl ">200</p>
-          <Link to="/admin/orders" className="text-blue-500 hover:underline">
+          <Link to="/admin/orders" className="text-main underline-hover">
             Manage Orders
           </Link>
         </div>
         <div className="p-4 shadow-md rounded-lg">
           <h2 className="text-xl font-semibold">Total Products</h2>
           <p className="text-2xl ">100</p>
-          <Link to="/admin/products" className="text-blue-500 hover:underline">
+          <Link to="/admin/products" className="text-main underline-hover">
             Manage Products
           </Link>
         </div>
@@ -38,8 +38,8 @@ const AdminHomePage = () => {
       <div className="mt-6">
         <h2 className="text-2xl font-bold mb-4">Recent Orders</h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-left text-gray-500">
-            <thead className="bg-gray-100 text-xs uppercase text-gray-700">
+          <table className="min-w-full text-left text-gray-500 bg-secondary">
+            <thead className="bg-third text-xs uppercase text-gray-700">
               <tr>
                 <th className="py-3 px-4">Order ID</th>
                 <th className="py-3 px-4">User</th>
@@ -52,7 +52,7 @@ const AdminHomePage = () => {
                 orders.map((order) => (
                   <tr
                     key={order._id}
-                    className="border-b hover:bg-gray-50 cursor-pointer"
+                    className="border-b border-main hover:bg-white cursor-pointer"
                   >
                     <td className="p-4">{order._id}</td>
                     <td className="p-4">{order.user.name}</td>

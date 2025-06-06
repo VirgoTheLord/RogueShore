@@ -39,7 +39,7 @@ const EditProductPage = () => {
     console.log(productData);
   };
   return (
-    <div className="max-w-5xl mx-auto p-6 shadow-md rounded-md">
+    <div className="max-w-5xl mx-auto p-6 ">
       <h2 className="text-3xl font-bold mb-6">Edit Product.</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-6">
@@ -49,7 +49,7 @@ const EditProductPage = () => {
             name="name"
             value={productData.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-main rounded-md p-2"
             required
           />
         </div>
@@ -60,7 +60,7 @@ const EditProductPage = () => {
             name="description"
             value={productData.description}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-main rounded-md p-2"
             required
           />
         </div>
@@ -71,7 +71,7 @@ const EditProductPage = () => {
             name="price"
             value={productData.price}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-main rounded-md p-2"
           />
         </div>
         <div className="mb-6">
@@ -81,7 +81,7 @@ const EditProductPage = () => {
             name="countInStock"
             value={productData.countInStock}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-main rounded-md p-2"
           />
         </div>
         <div className="mb-6">
@@ -91,7 +91,7 @@ const EditProductPage = () => {
             name="sku"
             value={productData.sku}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-main rounded-md p-2"
           />
         </div>
         <div className="mb-6">
@@ -108,7 +108,7 @@ const EditProductPage = () => {
                 sizes: e.target.value.split(",").map((size) => size.trim()),
               })
             }
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-main rounded-md p-2"
           />
         </div>
         <div className="mb-6">
@@ -125,7 +125,7 @@ const EditProductPage = () => {
                 colors: e.target.value.split(",").map((color) => color.trim()),
               })
             }
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-main rounded-md p-2"
           />
         </div>
         <div className="mb-6">

@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container mx-auto flex items-center justify-between py-4 px-6 bg-secondary">
+      <nav className="container mx-auto flex items-center justify-between py-4 px-5 bg-secondary">
         <Link to="/" className="md:text-2xl text-xl font-medium">
           RogueShore.
         </Link>

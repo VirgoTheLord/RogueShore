@@ -57,7 +57,7 @@ const UserManagement = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2  border rounded"
+              className="w-full p-2 border border-main focus:border-main rounded"
               required
             />
           </div>
@@ -68,7 +68,7 @@ const UserManagement = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border border-main rounded"
               required
             />
           </div>
@@ -79,7 +79,7 @@ const UserManagement = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border border-main rounded"
               required
             />
           </div>
@@ -89,7 +89,7 @@ const UserManagement = () => {
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="w-full p-2 mb-3 border rounded"
+              className="w-full p-2 mb-3 border border-main bg-secondary rounded"
             >
               <option value="customer">Customer</option>
               <option value="admin">Admin</option>
@@ -106,7 +106,7 @@ const UserManagement = () => {
 
       <div className="overflow-x-auto shadow-md sm:rounded-lg">
         <table className="min-w-full text-left text-gray-500">
-          <thead className="bg-gray-100 text-xs uppercase text-gray-700">
+          <thead className="bg-third text-xs uppercase text-gray-700">
             <tr>
               <th className="py-3 px-4">Name</th>
               <th className="py-3 px-4">Email</th>
@@ -116,7 +116,10 @@ const UserManagement = () => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user._id} className="border-b hover:bg-gray-50">
+              <tr
+                key={user._id}
+                className="border-b border-main bg-secondary hover:bg-white"
+              >
                 <td className="p-4 font-medium text-gray-900 whitespace-nowrap">
                   {user.name}
                 </td>
@@ -125,7 +128,7 @@ const UserManagement = () => {
                   <select
                     value={user.role}
                     onChange={(e) => handleRoleChange(user._id, e.target.value)}
-                    className="p-2 border rounded"
+                    className="p-2 border bg-secondary border-main rounded"
                   >
                     <option value="customer">Customer</option>
                     <option value="admin">Admin</option>

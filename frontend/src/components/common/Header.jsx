@@ -5,7 +5,7 @@ import CartDrawer from "../layout/CartDrawer";
 const Header = () => {
   return (
     <header className="border-b border-gray-200 shadow-sm">
-      <TopBar />
+      {/* <TopBar /> */}
       <Navbar />
     </header>
   );
