@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import register from "../assets/register.jpg"; // Adjust the path as necessary
+import { useDispatch } from "react-redux";
+import { registerUser } from "../redux/slices/authSlice"; // Import the registerUser action
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("User Registered:", { name, email, password });
+    dispatch(registerUser({ name, email, password }));
   };
   return (
     <div className="flex bg-third">
-      <div className="w-full md:w-1/2 h-[750px] flex flex-col justify-center items-center p-8 md:p-12">
+      <div className="w-full md:w-1/2 md:h-[750px] h-[785px] flex flex-col justify-center items-center p-8 md:p-12">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-md bg-secondary p-8 rounded-lg  shadow-lg"

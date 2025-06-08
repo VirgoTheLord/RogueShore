@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import login from "../assets/login.jpg"; // Adjust the path as necessary
+import { loginUser } from "../redux/slices/authSlice"; // Import the loginUser action
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("User Login:", { email, password });
+    dispatch(loginUser({ email, password }));
   };
   return (
     <div className="flex bg-third">
-      <div className="w-full md:w-1/2 h-[750px] flex flex-col justify-center items-center p-8 md:p-12">
+      <div className="w-full md:w-1/2 md:h-[750px] h-[785px] flex flex-col justify-center items-center p-8 md:p-12">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-md bg-secondary p-8 rounded-lg  shadow-lg"
