@@ -5,15 +5,21 @@ import { IoMdClose } from "react-icons/io";
 import SearchBar from "./SearchBar";
 import CartDrawer from "../layout/CartDrawer";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+  const { cart } = useSelector((state) => state.cart);
+
+  const cartItemCount =
+    cart?.products?.reduce((total, product) => total + product.quantity, 0) ||
+    0;
 
   const toggleCartDrawer = () => setDrawerOpen(!drawerOpen);
   const toggleNavDrawer = () => setNavDrawerOpen(!navDrawerOpen);
 
-  const navLinks = ["Men", "Women", "Top Wear", "Bottom Wear"];
+  //const navLinks = ["Men", "Women", "Top Wear", "Bottom Wear"];
 
   return (
     <>
@@ -24,15 +30,30 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          {navLinks.map((label) => (
-            <Link
-              key={label}
-              to="collections/all"
-              className="text-sm font-medium uppercase text-gray-700 hover:text-black"
-            >
-              {label}
-            </Link>
-          ))}
+          <Link
+            to="collections/all?gender=Men"
+            className="text-sm font-medium uppercase text-gray-700 hover:text-black"
+          >
+            Men
+          </Link>
+          <Link
+            to="collections/all?gender=Women"
+            className="text-sm font-medium uppercase text-gray-700 hover:text-black"
+          >
+            Women
+          </Link>
+          <Link
+            to="collections/all?category=Top Wear"
+            className="text-sm font-medium uppercase text-gray-700 hover:text-black"
+          >
+            Top Wear
+          </Link>
+          <Link
+            to="collections/all?category=Bottom Wear"
+            className="text-sm font-medium uppercase text-gray-700 hover:text-black"
+          >
+            Bottom Wear
+          </Link>
         </div>
 
         {/* Icons + Search */}
@@ -52,9 +73,11 @@ const Navbar = () => {
             className="relative hover:text-black"
           >
             <HiOutlineShoppingBag className="md:w-6 md:h-6 w-5 h-5 text-gray-700" />
-            <span className="absolute md:-top-1.5 md:left-3 -top-2 bg-main text-white text-xs font-semibold rounded-full px-1.5 py-0.5">
-              4
-            </span>
+            {cartItemCount > 0 && (
+              <span className="absolute md:-top-1.5 md:left-3 -top-2 bg-main text-white text-xs font-semibold rounded-full px-1.5 py-0.5">
+                {cartItemCount}
+              </span>
+            )}
           </button>
 
           <SearchBar />
@@ -84,16 +107,34 @@ const Navbar = () => {
         <div className="p-4">
           <h2 className="mb-10 text-3xl font-semibold">Menu.</h2>
           <nav className="space-y-4">
-            {navLinks.map((label) => (
-              <Link
-                key={label}
-                to="/collections/all"
-                onClick={toggleNavDrawer}
-                className="block text-gray-600 hover:text-black"
-              >
-                {label}
-              </Link>
-            ))}
+            <Link
+              to="/collections/all?gender=Men"
+              onClick={toggleNavDrawer}
+              className="block text-gray-600 hover:text-black"
+            >
+              Men
+            </Link>
+            <Link
+              to="/collections/all?gender=Women"
+              onClick={toggleNavDrawer}
+              className="block text-gray-600 hover:text-black"
+            >
+              Women
+            </Link>
+            <Link
+              to="/collections/all?category=Top Wear"
+              onClick={toggleNavDrawer}
+              className="block text-gray-600 hover:text-black"
+            >
+              Top Wear
+            </Link>
+            <Link
+              to="/collections/all?category=Bottom Wear"
+              onClick={toggleNavDrawer}
+              className="block text-gray-600 hover:text-black"
+            >
+              Bottom Wear
+            </Link>
           </nav>
         </div>
       </div>
