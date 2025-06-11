@@ -19,11 +19,12 @@ const RazorPayButton = ({ amount, onSuccess, onError, shippingAddress }) => {
   const handlePayment = () => {
     // Convert amount to paise (Razorpay expects smallest currency unit)
     const amountInPaise = amount * 100 * 86;
+    const finalAmount = amountInPaise.toFixed(2);
 
     // Razorpay checkout options
     const options = {
       key: import.meta.env.VITE_KEY_ID, // Replace with your Razorpay Test Key ID
-      amount: amountInPaise, // Amount in paise (e.g., 10000 for ₹100)
+      amount: finalAmount, // Amount in paise (e.g., 10000 for ₹100)
       currency: "INR",
       name: "RogueShore",
       description: "Your Cart Items:",
