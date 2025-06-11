@@ -9,15 +9,14 @@ userRouter.post("/register", async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (user) {
-      res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({ message: "User already exists" });
     }
+
     user = new User({ name, email, password });
     await user.save();
 
-    //create JWT token
     const payload = { user: { id: user._id, role: user.role } };
 
-    //sign and return the token with user data
     jwt.sign(
       payload,
       process.env.JWT_SECRET,
@@ -36,7 +35,7 @@ userRouter.post("/register", async (req, res) => {
       }
     );
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ message: "Server error" });
   }
 });

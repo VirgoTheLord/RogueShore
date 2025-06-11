@@ -39,4 +39,7 @@ app.use("/api/admin/users", adminRouter);
 app.use("/api/admin/products", productAdminRouter);
 app.use("/api/admin/orders", orderAdminRouter);
 
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 module.exports = app;
