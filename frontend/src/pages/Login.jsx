@@ -12,7 +12,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, guestId } = useSelector((state) => state.auth);
+  const { user, guestId, loading } = useSelector((state) => state.auth);
   const { cart } = useSelector((state) => state.cart);
 
   //get redirect parameter and check if it checkout or smthing else
@@ -75,7 +75,7 @@ const Login = () => {
             type="submit"
             className="w-full bg-main text-white p-2 rounded-lg font-medium hover:bg-third transition"
           >
-            Sign In
+            {loading ? "Loading..." : "Sign In"}
           </button>
           <p className="mt-6 text-center text-sm">
             Don't have an Account?{" "}

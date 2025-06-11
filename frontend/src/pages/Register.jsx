@@ -13,7 +13,7 @@ const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, guestId } = useSelector((state) => state.auth);
+  const { user, guestId, loading } = useSelector((state) => state.auth);
   const { cart } = useSelector((state) => state.cart);
 
   //get redirect parameter and check if it checkout or smthing else
@@ -86,7 +86,7 @@ const Register = () => {
             type="submit"
             className="w-full bg-main text-white p-2 rounded-lg font-medium hover:bg-third transition"
           >
-            Sign Up
+            {loading ? "Loading..." : "Sign Up"}
           </button>
           <p className="mt-6 text-center text-sm">
             Already Have an Account?{" "}

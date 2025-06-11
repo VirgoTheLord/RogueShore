@@ -11,7 +11,7 @@ export const fetchUsers = createAsyncThunk("admin/fetchUsers", async () => {
       },
     }
   );
-  response.data;
+  return response.data;
 });
 
 //add the create user action
@@ -48,7 +48,7 @@ export const updateUser = createAsyncThunk(
         },
       }
     );
-    response.data;
+    return response.data.user;
   }
 );
 
@@ -84,7 +84,7 @@ const adminSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
-      .addCase(updateUser.fulfilled, (state) => {
+      .addCase(updateUser.fulfilled, (state, action) => {
         const updatedUser = action.payload;
         const userIndex = state.users.findIndex(
           (user) => user._id === updatedUser._id
