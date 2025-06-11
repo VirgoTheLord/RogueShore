@@ -15,6 +15,17 @@
   overflow-x: hidden;
   background-color: #FAF0E6 ;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  overflow-x: hidden; /* keep x hidden */
+  overflow-y: auto;   /* allow normal y scroll when Locomotive isn't used */
+}
+
+
+
+
 .scroll-hidden::-webkit-scrollbar {
   display: none;
 }
@@ -102,4 +113,104 @@ button:hover .animate-color-pulse {
 }
 button:active .animate-ripple {
   animation: ripple 0.4s ease-out;
+}
+
+/* Hide scrollbar globally */
+html,
+body,
+.scroll-hidden {
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE and Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.scroll-hidden::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg) scale(2); }
+  25% { transform: rotate(5deg) scale(2); }
+  75% { transform: rotate(-5deg) scale(2); }
+}
+
+@keyframes arrow-swipe {
+  0% {
+    transform: translateX(0)scale(2);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100%)scale(2);
+    opacity: 0;
+  }
+  51% {
+    transform: translateX(-100%)scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0)scale(2);
+    opacity: 1;
+  }
+}
+
+@keyframes cart-swipe {
+  0%, 100% {
+    transform: translateX(10%) scale(2);
+  }
+  25% {
+    transform: translateX(10%) scale(2);
+  }
+  50%{
+    transform:translateX(-20%) scale(2);
+  }
+  75% {
+    transform: translateX(10%) scale(2);
+  }
+}
+
+.icon-container .icon {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+  transform: scale(1);
+  animation: none;
+}
+
+/* Hover scale and wiggle for all */
+.icon-container:hover .icon {
+  transform: scale(2);
+  animation-fill-mode: forwards;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for first icon - wiggle */
+.icon-container:hover .icon.bag-icon {
+  animation: wiggle 0.5s ease-in-out 0.3s infinite;
+}
+
+/* Hover effect for second icon - vanish right, appear left */
+.icon-container:hover .icon.arrow-icon {
+  animation: arrow-swipe 2s linear infinite;
+}
+
+/* Hover effect for third icon - swiping left and right */
+.icon-container:hover .icon.cart-icon {
+  animation: cart-swipe 1.5s ease-in-out infinite;
+}
+
+/* Smooth revert on hover out */
+.icon-container:not(:hover) .icon {
+  animation: none;
+  transform: scale(1);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Text group moves down on hover */
+.icon-container:hover .text-group {
+  transform: translateY(8px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon-container {
+  transition: all 0.3s ease-in-out;
 }

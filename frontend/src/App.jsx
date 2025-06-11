@@ -21,16 +21,24 @@ import OrderManagementPage from "./components/admin/OrderManagementPage";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import ProtectedRoute from "./components/common/ProtectedRoute";
+import SmoothScroll from "./components/common/SmoothScroll";
 
 const App = () => {
   return (
     <Provider store={store}>
-      {/* Redux Store Provider */}
       <BrowserRouter>
         <Toaster position="top-right" />
+
         <Routes>
-          <Route path="/" element={<UserLayout />}>
-            {/* User Layout */}
+          {/* User routes wrapped with SmoothScroll */}
+          <Route
+            element={
+              <SmoothScroll>
+                <UserLayout />
+              </SmoothScroll>
+            }
+            path="/"
+          >
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
@@ -49,6 +57,7 @@ const App = () => {
             <Route path="my-orders" element={<MyOrdersPage />} />
           </Route>
 
+          {/* Admin routes without SmoothScroll */}
           <Route
             path="/admin"
             element={
@@ -57,7 +66,6 @@ const App = () => {
               </ProtectedRoute>
             }
           >
-            {/* Admin Layout */}
             <Route index element={<AdminHomePage />} />
             <Route path="users" element={<UserManagement />} />
             <Route path="products" element={<ProductManagement />} />

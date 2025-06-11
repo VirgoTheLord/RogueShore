@@ -30,7 +30,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 ml-8">
           <Link
             to="collections/all?gender=Men"
             className="text-sm font-medium uppercase text-gray-700 hover:text-black"
