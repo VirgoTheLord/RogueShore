@@ -22,6 +22,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import SmoothScroll from "./components/common/SmoothScroll";
+import AppLoader from "./components/common/AppLoader";
 
 const App = () => {
   return (
@@ -29,50 +30,52 @@ const App = () => {
       <BrowserRouter>
         <Toaster position="top-right" />
 
-        <Routes>
-          {/* User routes wrapped with SmoothScroll */}
-          <Route
-            element={
-              <SmoothScroll>
-                <UserLayout />
-              </SmoothScroll>
-            }
-            path="/"
-          >
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="profile" element={<Profile />} />
+        <AppLoader>
+          <Routes>
+            {/* User routes wrapped with SmoothScroll */}
             <Route
-              path="collections/:collection"
-              element={<CollectionPage />}
-            />
-            <Route path="product/:id" element={<ProductDetails />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route
-              path="order-confirmation"
-              element={<OrderConfirmationPage />}
-            />
-            <Route path="order/:id" element={<OrderDetailsPage />} />
-            <Route path="my-orders" element={<MyOrdersPage />} />
-          </Route>
+              element={
+                <SmoothScroll>
+                  <UserLayout />
+                </SmoothScroll>
+              }
+              path="/"
+            >
+              <Route index element={<Home />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="profile" element={<Profile />} />
+              <Route
+                path="collections/:collection"
+                element={<CollectionPage />}
+              />
+              <Route path="product/:id" element={<ProductDetails />} />
+              <Route path="checkout" element={<Checkout />} />
+              <Route
+                path="order-confirmation"
+                element={<OrderConfirmationPage />}
+              />
+              <Route path="order/:id" element={<OrderDetailsPage />} />
+              <Route path="my-orders" element={<MyOrdersPage />} />
+            </Route>
 
-          {/* Admin routes without SmoothScroll */}
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute role="admin">
-                <AdminLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<AdminHomePage />} />
-            <Route path="users" element={<UserManagement />} />
-            <Route path="products" element={<ProductManagement />} />
-            <Route path="products/:id/edit" element={<EditProductPage />} />
-            <Route path="order" element={<OrderManagementPage />} />
-          </Route>
-        </Routes>
+            {/* Admin routes without SmoothScroll */}
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute role="admin">
+                  <AdminLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<AdminHomePage />} />
+              <Route path="users" element={<UserManagement />} />
+              <Route path="products" element={<ProductManagement />} />
+              <Route path="products/:id/edit" element={<EditProductPage />} />
+              <Route path="order" element={<OrderManagementPage />} />
+            </Route>
+          </Routes>
+        </AppLoader>
       </BrowserRouter>
     </Provider>
   );

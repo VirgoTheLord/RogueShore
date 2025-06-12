@@ -1,4 +1,4 @@
-/* loader.css from Uiverse.io by satyamchaudharydev */
+/* Modified loader.css using provided theme colors */
 
 .spinner {
   position: relative;
@@ -16,9 +16,9 @@
   left: var(--left);
   width: 35px;
   height: 7px;
-  background: #fff;
+  background: #A67C68; /* Using --color-main */
   animation: dominos 1s ease infinite;
-  box-shadow: 2px 2px 3px 0px black;
+  box-shadow: 2px 2px 3px 0px #E5C9B2; /* Using --color-third */
 }
 
 .spinner span:nth-child(1) {
