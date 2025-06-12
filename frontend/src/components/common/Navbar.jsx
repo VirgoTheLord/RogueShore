@@ -24,13 +24,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container mx-auto flex items-center justify-between md:py-2.5 py-3.25 px-4 bg-secondary">
-        <Link to="/" className="md:text-2xl text-xl font-medium md:ml-1">
+      <nav className="w-full flex items-center justify-between md:py-2.5 py-3.25 bg-secondary px-4 md:px-6">
+        <Link to="/" className="md:text-2xl text-xl font-medium  ">
           RogueShore.
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 ml-8">
+        <div className="hidden md:flex space-x-8 ">
           <Link
             to="collections/all?gender=Men"
             className="text-sm font-medium uppercase text-gray-700 hover:text-black"
